@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  minecraft-exporter:
+    image: minecraft-exporter:latest
+    restart: always
+    container_name: minecraft-exporter
+    ports:
+      - 8255:8255
+    networks:
+      - default
+      - proxy
+
+networks:
+  proxy:
+    external: true
